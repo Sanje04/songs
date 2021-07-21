@@ -9,7 +9,7 @@ export const songsReducer = () => {
     ];
 };
 
-export const selectedSongReducer = (selectedSong=null, action) => {
+export const selectedSongReducer = (selectSong=null, action) => {
     if (action.type === 'SONG_SELECTED') {
         return action.payload;
     }
