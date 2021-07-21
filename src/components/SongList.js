@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { selectSong } from '../actions'
 
 class SongList extends React.Component {
     //take list of songs, map over them and give back as jsx
@@ -8,7 +9,7 @@ class SongList extends React.Component {
             return (
                 <div className="item" key={song.title}>
                     <div className="right floated content">
-                        <div className="ui button primary">
+                        <div className="ui button primary" onClick={() => this.props.selectSong(song)}>
                             Select
                         </div>
                     </div>
@@ -30,7 +31,7 @@ class SongList extends React.Component {
 
 
 const mapStateToProps = (state) => {
-    //console.log(state);
+    console.log(state.selectedSong.title);
 
     return {
         songs: state.songs
@@ -38,4 +39,6 @@ const mapStateToProps = (state) => {
 }
 
 //second set of parenthesis invoke the function being returned
-export default connect(mapStateToProps)(SongList);
+export default connect(mapStateToProps, {
+    selectSong
+})(SongList);

@@ -9,12 +9,12 @@ export const songsReducer = () => {
     ];
 };
 
-export const selectedSongReducer = (selectSong=null, action) => {
+export const selectedSongReducer = (selectedSong=null, action) => {
     if (action.type === 'SONG_SELECTED') {
         return action.payload;
     }
 
-    return selectSong;
+    return selectedSong;
 };
 
 //any file has access to this file
