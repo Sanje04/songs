@@ -31,7 +31,7 @@ class SongList extends React.Component {
 
 
 const mapStateToProps = (state) => {
-    console.log(state.selectedSong.title);
+    //console.log(state.selectedSong.title);
 
     return {
         songs: state.songs
@@ -39,6 +39,7 @@ const mapStateToProps = (state) => {
 }
 
 //second set of parenthesis invoke the function being returned
+//calling an action creator
 export default connect(mapStateToProps, {
     selectSong
 })(SongList);
